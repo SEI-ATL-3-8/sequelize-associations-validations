@@ -1,0 +1,4 @@
+# Sequelize associations and validations
+
+
+
