@@ -14,7 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   author.init({
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
     age: DataTypes.INTEGER,    
     sex: DataTypes.STRING,
     email: DataTypes.STRING,
