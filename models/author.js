@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   };
   author.init({
     name: DataTypes.STRING,
-    age: DataTypes.INTEGER,
+    age: DataTypes.INTEGER,    
+    sex: DataTypes.STRING,
+    email: DataTypes.STRING,
+    website: DataTypes.STRING,
     hometownId: DataTypes.INTEGER,
   }, {
     sequelize,
