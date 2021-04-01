@@ -1,9 +1,0 @@
-{
-  "development": {
-    "username": "postgres",
-    "password": "Jobiwankenobi00!",
-    "database": "sequelize_associations_validations",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  }
-}
