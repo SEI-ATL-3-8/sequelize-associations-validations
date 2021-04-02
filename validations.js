@@ -27,6 +27,7 @@ const validationExercise = async () => {
     })
   } catch (error) {
     if (error.errors[0].message === 'Validation notEmpty on name failed') {
+      notEmpty = true;
       console.log('#1 GOOD JOB!');
     } else {
       console.log(error);
