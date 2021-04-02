@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         isIn: {
-          args: [['P', 'Q']],
+          args: [['P', 'M']],
           msg: 'Validation isIn on sex failed',
         }
       }
