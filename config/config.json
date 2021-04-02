@@ -1,8 +1,6 @@
 {
   "development": {
-    "username": "your-username",
-    "password": "your-password",
-    "database": "database_development",
+    "database": "sequelize-associations-validations",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
