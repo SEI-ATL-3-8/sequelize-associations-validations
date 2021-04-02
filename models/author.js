@@ -11,14 +11,39 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.author.belongsTo(models.hometown)
+      models.author.hasMany(models.book)
+      models.author.belongsToMany(models.subject, {through: 'book'})
     }
   };
   author.init({
-    name: DataTypes.STRING,
-    age: DataTypes.INTEGER,    
-    sex: DataTypes.STRING,
-    email: DataTypes.STRING,
-    website: DataTypes.STRING,
+    name: {type:DataTypes.STRING, allowNull:false,
+      validate: {
+        notNull:true,
+        notEmpty: true
+      }
+    }, 
+    age: {type:DataTypes.INTEGER, allowNull:false,
+      validate: {
+        isNumeric: true,
+        min: 0
+      }
+    },    
+    sex: {type:DataTypes.INTEGER, allowNull:false,
+      validate: {
+        isIn: [['F', 'M']]
+      }
+    },    
+    email: {type:DataTypes.INTEGER, allowNull:false,
+      validate: {
+        isEmail: true
+      }
+    },  
+    website: {type:DataTypes.INTEGER, allowNull:false,
+      validate: {
+        isUrl: true
+      }
+    }, 
     hometownId: DataTypes.INTEGER,
   }, {
     sequelize,
