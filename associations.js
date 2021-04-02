@@ -65,4 +65,4 @@ const childAuths = async () => {
     const auths = await sub.getAuthors()
     console.log(auths)
 }
-// git a
+// childAuths()
