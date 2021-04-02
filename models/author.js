@@ -1,28 +1,53 @@
 'use strict';
 const {
-  Model
+    Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class author extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  };
-  author.init({
-    name: DataTypes.STRING,
-    age: DataTypes.INTEGER,    
-    sex: DataTypes.STRING,
-    email: DataTypes.STRING,
-    website: DataTypes.STRING,
-    hometownId: DataTypes.INTEGER,
-  }, {
-    sequelize,
-    modelName: 'author',
-  });
-  return author;
+    class author extends Model {
+        /**
+         * Helper method for defining associations.
+         * This method is not a part of Sequelize lifecycle.
+         * The `models/index` file will call this method automatically.
+         */
+        static associate(models) {
+            // define association here
+            models.author.belongsTo(models.hometown);
+            models.author.hasMany(models.book);
+            models.author.belongsToMany(models.subject, { through: 'book' });
+        }
+    };
+    author.init({
+        name: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: true
+            }
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            validate: {
+                isNumeric: true,
+                min: 0,
+                len: [1, 3],
+            }
+        },
+        sex: {
+            type: DataTypes.STRING,
+            validate: {
+                isIn: [
+                    ['M', 'F', 'U']
+                ],
+            }
+        },
+        email: {
+            type: DataTypes.STRING,
+            validate: { isEmail: true }
+        },
+        website: { type: DataTypes.STRING, validate: { isUrl: true, } },
+        hometownId: DataTypes.INTEGER,
+    }, {
+        sequelize,
+        modelName: 'author',
+    });
+    return author;
 };
