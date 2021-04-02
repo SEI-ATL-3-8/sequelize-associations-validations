@@ -17,11 +17,40 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   author.init({
-    name: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    sex: DataTypes.STRING,
-    email: DataTypes.STRING,
-    website: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      validate: {
+        isNumeric: true,
+        min: 1
+      }
+    },
+    sex: {
+      type: DataTypes.STRING,
+      validate: {
+        isIn: {
+          args: [['P', 'Q']],
+          msg: 'Validation isIn on sex failed',
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true
+      }
+    },
+    website: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true
+      }
+    },
     hometownId: DataTypes.INTEGER,
   }, {
     sequelize,
