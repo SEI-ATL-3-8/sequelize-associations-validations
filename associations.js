@@ -21,9 +21,46 @@ const models = require('./models')
 
 // get Stephen King's hometown
 
+// const hometownSK = async () => {
+//     const king = await models.author.findOne({
+//         where: {
+//             name: 'Stephen King'
+//         }
+//     })
+//     const kingHometown = await king.getHometown()
+//     console.log(kingHometown)
+// }
+
+// hometownSK()
+
 // get all books by Mark Lutz
 
+// const getLutzBooks = async () => {
+//     const lutz = await models.author.findOne({
+//         where: {
+//             name: 'Mark Lutz'
+//         }
+//     })
+//     const lutzBooks = await lutz.getBooks()
+//     console.log(lutzBooks)
+// }
+
+// getLutzBooks()
+
 // get the author of Little Women
+
+const authorLW = async () => {
+    const littleWomen = await models.book.findOne({
+        where: {
+            title: 'Little Women'
+        }
+    })
+    const authorLittleWomen = await littleWomen.getAuthor()
+    console.log(authorLittleWomen)
+}
+
+authorLW()
+
 
 // get all books in the Childrens Books subject
 
