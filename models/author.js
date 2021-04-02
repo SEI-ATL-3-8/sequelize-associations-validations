@@ -26,10 +26,16 @@ module.exports = (sequelize, DataTypes) => {
     age: {
       type: DataTypes.INTEGER,
       validate: {
-        isNumeric: true
+        isNumeric: true,
+        min: 1
       }
     },    
-    sex: DataTypes.STRING,
+    sex: {
+      type: DataTypes.STRING,
+      validate: {
+        isIn: [['M', 'F']]
+      }
+    },
     email: DataTypes.STRING,
     website: DataTypes.STRING,
     hometownId: DataTypes.INTEGER,
