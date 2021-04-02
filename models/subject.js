@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.subject.belongsToMany(models.author, {through: 'books'})
+      models.subject.belongsToMany(models.author, {through: 'book'})
       models.subject.hasMany(models.book)
     }
   };
