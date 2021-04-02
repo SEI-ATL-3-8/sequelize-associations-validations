@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.author.belongsTo(models.hometown);
       models.author.hasMany(models.book);
+      models.author.belongsToMany(models.subject,{through: 'book'});
     }
   };
   author.init({

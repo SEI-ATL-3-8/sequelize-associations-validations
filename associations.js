@@ -1,5 +1,5 @@
 const models = require('./models/');
-const {Op} = require('sequelize')
+const {Op, fn, col} = require('sequelize')
 const {hometown,book,author,subject} = models;
 
 // get all authors from Chicago
@@ -39,21 +39,17 @@ const {hometown,book,author,subject} = models;
 //     console.log(spaceOddyseySubject);
 // })();
 // get all subjects that Mark Lutz has written on
-// (async() => {
-//     const markLutz = await author.findOne({where:{name:'Mark Lutz'}});
-//     const markLutzBooks = await markLutz.getBooks();
-//     for (let book of markLutzBooks) {
-//         const subject = await book.getSubject();
-//         console.log(subject);
-//     }
-// })();
+(async() => {
+    const markLutz = await author.findOne({where:{name:'Mark Lutz'},});
+    const markLutzSubjects = await markLutz.getSubjects({
+    });
+    console.log(markLutzSubjects);
+  
+})();
 // get all authors that have written books in the Childrens Books subject
 
-(async() => {
-    const childrensSubject = await subject.findOne({where:{name:{[Op.iLike]:'Children%'}}});
-    const childrenBooks = await childrensSubject.getBooks();
-    for (let book of childrenBooks) {
-        const author = await book.getAuthor();
-        console.log(author);
-    }
-})();
+// (async() => {
+//     const childrensSubject = await subject.findOne({where:{name:{[Op.iLike]:'Children%'}}});
+//     const childrenAuthors = await childrensSubject.getAuthors();
+//     console.log(childrenAuthors);
+// })();
