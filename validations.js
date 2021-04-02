@@ -85,38 +85,38 @@ const validationExercise = async () => {
   }
     
 //   // #5
-//   try {
-//     await models.author.create({
-//       name: 'Booky Bookington',
-//       age: 41,
-//       sex: 'M',
-//       email: 'bookybookingtoncom',
-//       website: 'http://booky-bookington.com'
-//     })
-//   } catch (error) {
-//     if (error.errors[0].message === 'Validation isEmail on email failed') {
-//       console.log('#5 GOOD JOB!');
-//     } else {
-//       console.log(error);
-//     }
-//   }
+  try {
+    await models.author.create({
+      name: 'Booky Bookington',
+      age: 41,
+      sex: 'M',
+      email: 'bookybookingtoncom',
+      website: 'http://booky-bookington.com'
+    })
+  } catch (error) {
+    if (error.errors[0].message === 'Validation isEmail on email failed') {
+      console.log('#5 GOOD JOB!');
+    } else {
+      console.log(error);
+    }
+  }
     
 //   // #6
-//   try {
-//     await models.author.create({
-//       name: 'Booky Bookington',
-//       age: 41,
-//       sex: 'M',
-//       email: 'booky@bookington.com',
-//       website: 'http://booky-bookington'
-//     })
-//   } catch (error) {
-//     if (error.errors[0].message === 'Validation isUrl on website failed') {
-//       console.log('#6 GOOD JOB!');
-//     } else {
-//       console.log(error);
-//     }
-//   }
+  try {
+    await models.author.create({
+      name: 'Booky Bookington',
+      age: 41,
+      sex: 'M',
+      email: 'booky@bookington.com',
+      website: 'http://booky-bookington'
+    })
+  } catch (error) {
+    if (error.errors[0].message === 'Validation isUrl on website failed') {
+      console.log('#6 GOOD JOB!');
+    } else {
+      console.log(error);
+    }
+  }
 }
 
 validationExercise()
