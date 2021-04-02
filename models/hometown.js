@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.hometown.hasMany(models.author)
+      //NO someHometown.setAuthor(someHometown)
+      //BUT RATHER someAuthor.setHometown(someHometown)
     }
   };
   hometown.init({
