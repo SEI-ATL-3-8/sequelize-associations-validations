@@ -36,8 +36,18 @@ module.exports = (sequelize, DataTypes) => {
         isIn: [['M', 'F']]
       }
     },
-    email: DataTypes.STRING,
-    website: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true
+      }
+    },  
+    website: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true
+      }
+    },  
     hometownId: DataTypes.INTEGER,
   }, {
     sequelize,
