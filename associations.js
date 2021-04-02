@@ -26,7 +26,7 @@ const allChicagoAuthors = async () => {
     }
 }
 
-allChicagoAuthors()
+// allChicagoAuthors()
 // get Stephen King's hometown
 
 const stephenHometown = async () => {
@@ -44,7 +44,7 @@ const stephenHometown = async () => {
 
 }
 
-stephenHometown()
+// stephenHometown()
 
 // get all books by Mark Lutz
 
@@ -61,7 +61,7 @@ const markBooks = async () => {
     console.log(books);
 }
 
-markBooks()
+// markBooks()
 
 // get the author of Little Women
 
@@ -80,7 +80,7 @@ const littleWomenAuthor = async () => {
     console.log(author);
 }
 
-littleWomenAuthor()
+// littleWomenAuthor()
 // get all books in the Childrens Books subject
 
 const allChildrenBooks = async () => {
@@ -96,7 +96,7 @@ const allChildrenBooks = async () => {
     const books = await childrenBooks.getBooks();
     console.log(books);
 }
-allChildrenBooks()
+// allChildrenBooks()
 // Get the subject of the 2001 Space Oddyssey
 
 const spaceOddysseySubject = async () => {
@@ -112,7 +112,7 @@ const spaceOddysseySubject = async () => {
 
     console.log(subject);
 }
-spaceOddysseySubject()
+// spaceOddysseySubject()
 
 // get all subjects that Mark Lutz has written on
 
@@ -126,9 +126,10 @@ const markSubjects = async () => {
     )
 
     const subjects = await mark.getSubjects();
+    console.log(subjects);
 }
 
-markSubjects()
+// markSubjects()
 // get all authors that have written books in the Childrens Books subject
 
 const childrenBookAuthors = async () => {
