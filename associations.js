@@ -2,7 +2,7 @@ const models = require('./models')
 
 // get all authors from Chicago
 
-/* const allAuthorsChicago = async () => {
+const allAuthorsChicago = async () => {
     try {
         const chicago = await models.hometown.findOne({
             where: {
@@ -16,11 +16,11 @@ const models = require('./models')
         console.log(error.message)
     }
 }
-allAuthorsChicago() */
+allAuthorsChicago()
 
 // get Stephen King's hometown
 
-/* const stephenKingHome = async () => {
+const stephenKingHome = async () => {
     try {
         const stephenKing = await models.author.findOne({
             where: {
@@ -34,11 +34,11 @@ allAuthorsChicago() */
         console.log(error.message)
     }
 }
-stephenKingHome() */
+stephenKingHome()
 
 // get all books by Mark Lutz
 
-/* const allBooksLutz = async () => {
+const allBooksLutz = async () => {
     try {
         const markLutz = await models.author.findOne({
             where: {
@@ -52,11 +52,11 @@ stephenKingHome() */
         console.log(error.message)
     }
 }
-allBooksLutz() */
+allBooksLutz()
 
 // get the author of Little Women
 
-/* const authorLittleWomen = async () => {
+const authorLittleWomen = async () => {
     try {
         const littleWomen = await models.book.findOne({
             where: {
@@ -70,11 +70,11 @@ allBooksLutz() */
         console.log(error.message)
     }
 }
-authorLittleWomen() */
+authorLittleWomen()
 
 // get all books in the Childrens Books subject
 
-/* const allChildrensBooks = async () => {
+const allChildrensBooks = async () => {
     try {
         const childrenSubject = await models.subject.findOne({
             where: {
@@ -88,11 +88,11 @@ authorLittleWomen() */
         console.log(error.message)
     }
 }
-allChildrensBooks() */
+allChildrensBooks()
 
 // Get the subject of the 2001 Space Oddyssey
 
-/* const subjectSpaceOdyssey = async () => {
+const subjectSpaceOdyssey = async () => {
     try {
         const spaceOdyssey = await models.book.findOne({
             where: {
@@ -106,11 +106,11 @@ allChildrensBooks() */
         console.log(error.message)
     }
 }
-subjectSpaceOdyssey() */
+subjectSpaceOdyssey()
 
 // get all subjects that Mark Lutz has written on
 
-/* const allSubjectsLutz = async () => {
+const allSubjectsLutz = async () => {
     try {
         const markLutz = await models.author.findOne({
             where: {
@@ -124,7 +124,7 @@ subjectSpaceOdyssey() */
         console.log(error.message)
     }
 }
-allSubjectsLutz() */
+allSubjectsLutz()
 
 // get all authors that have written books in the Childrens Books subject
 
