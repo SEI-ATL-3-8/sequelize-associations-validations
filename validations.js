@@ -4,17 +4,17 @@ const validationExercise = async () => {
   // this one should create an author no problem!
   // it's just to have an example of what a fully valid author looks like
   // you can comment it out if you'd like
-  try {
-    await models.author.create({
-      name: 'Booky Bookington',
-      age: 41,
-      sex: 'M',
-      email: 'booky@bookington.com',
-      website: 'http://booky-bookington.com'
-    })
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   await models.author.create({
+  //     name: 'Booky Bookington',
+  //     age: 41,
+  //     sex: 'M',
+  //     email: 'booky@bookington.com',
+  //     website: 'http://booky-bookington.com'
+  //   })
+  // } catch (error) {
+  //   console.log(error);
+  // }
   
   // #1
   try {
@@ -84,39 +84,39 @@ const validationExercise = async () => {
     }
   }
     
-  // #5
-  try {
-    await models.author.create({
-      name: 'Booky Bookington',
-      age: 41,
-      sex: 'M',
-      email: 'bookybookingtoncom',
-      website: 'http://booky-bookington.com'
-    })
-  } catch (error) {
-    if (error.errors[0].message === 'Validation isEmail on email failed') {
-      console.log('#5 GOOD JOB!');
-    } else {
-      console.log(error);
-    }
-  }
+//   // #5
+//   try {
+//     await models.author.create({
+//       name: 'Booky Bookington',
+//       age: 41,
+//       sex: 'M',
+//       email: 'bookybookingtoncom',
+//       website: 'http://booky-bookington.com'
+//     })
+//   } catch (error) {
+//     if (error.errors[0].message === 'Validation isEmail on email failed') {
+//       console.log('#5 GOOD JOB!');
+//     } else {
+//       console.log(error);
+//     }
+//   }
     
-  // #6
-  try {
-    await models.author.create({
-      name: 'Booky Bookington',
-      age: 41,
-      sex: 'M',
-      email: 'booky@bookington.com',
-      website: 'http://booky-bookington'
-    })
-  } catch (error) {
-    if (error.errors[0].message === 'Validation isUrl on website failed') {
-      console.log('#6 GOOD JOB!');
-    } else {
-      console.log(error);
-    }
-  }
+//   // #6
+//   try {
+//     await models.author.create({
+//       name: 'Booky Bookington',
+//       age: 41,
+//       sex: 'M',
+//       email: 'booky@bookington.com',
+//       website: 'http://booky-bookington'
+//     })
+//   } catch (error) {
+//     if (error.errors[0].message === 'Validation isUrl on website failed') {
+//       console.log('#6 GOOD JOB!');
+//     } else {
+//       console.log(error);
+//     }
+//   }
 }
 
 validationExercise()

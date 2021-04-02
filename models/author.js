@@ -24,8 +24,19 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true
       }
     },
-    age: DataTypes.INTEGER,    
-    sex: DataTypes.STRING,
+    age: {
+      type:DataTypes.INTEGER,
+      validate: {
+        isNumeric: true,
+        min:0
+      }
+    },    
+    sex: {
+      type:DataTypes.STRING,
+      validate: {
+        isIn: [['M','F']]
+      }
+    },
     email: DataTypes.STRING,
     website: DataTypes.STRING,
     hometownId: DataTypes.INTEGER,

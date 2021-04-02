@@ -110,14 +110,14 @@ const models = require('./models')
 
 // get all authors that have written books in the Childrens Books subject
 
-const getChildrensAuthors = async () => {
-    const childrens = await models.subject.findOne({
-        where: {
-            name: 'Childrens Books'
-        }
-    })
-    const childrensAuthors = await childrens.getAuthors()
-    console.log(childrensAuthors)
-}
+// const getChildrensAuthors = async () => {
+//     const childrens = await models.subject.findOne({
+//         where: {
+//             name: 'Childrens Books'
+//         }
+//     })
+//     const childrensAuthors = await childrens.getAuthors()
+//     console.log(childrensAuthors)
+// }
 
-getChildrensAuthors()
+// getChildrensAuthors()
