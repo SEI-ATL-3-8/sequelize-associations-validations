@@ -23,7 +23,9 @@ const kingsFrom = async () => {
       name: 'Stephen King'
     }
   })
-  console.log(mrKing)
+  // console.log(mrKing)
+  const address = await mrKing.getHometown()
+  console.log(address)
 }
 kingsFrom()
 
@@ -42,7 +44,7 @@ const lutzBookz = async () => {
 }
 lutzBookz()
 
-// get the author of Little Women
+// // get the author of Little Women
 
 const lilWomen = async () => {
   const bookIs = await models.book.findOne({
@@ -56,7 +58,7 @@ const lilWomen = async () => {
 }
 lilWomen()
 
-// get all books in the Childrens Books subject
+// // get all books in the Childrens Books subject
 
 const kidzBooks = async () => {
   const topicIs = await models.subject.findOne({
@@ -70,7 +72,7 @@ const kidzBooks = async () => {
 }
 kidzBooks()
 
-// Get the subject of the 2001 Space Oddyssey
+// // Get the subject of the 2001 Space Oddyssey
 
 const whatSubj = async () => {
   const itsABook = await models.book.findOne({
@@ -84,7 +86,7 @@ const whatSubj = async () => {
 }
 whatSubj()
 
-// get all subjects that Mark Lutz has written on
+// // get all subjects that Mark Lutz has written on
 
 const allSubj = async () => {
   const markyMark = await models.author.findOne({
@@ -98,7 +100,7 @@ const allSubj = async () => {
 }
 allSubj()
 
-// get all authors that have written books in the Childrens Books subject
+// // get all authors that have written books in the Childrens Books subject
 
 const allOfTheAuthors = async () => {
   const topicIs = await models.subject.findOne({
