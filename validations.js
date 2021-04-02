@@ -4,17 +4,17 @@ const validationExercise = async () => {
   // this one should create an author no problem!
   // it's just to have an example of what a fully valid author looks like
   // you can comment it out if you'd like
-  try {
-    await models.author.create({
-      name: 'Booky Bookington',
-      age: 41,
-      sex: 'M',
-      email: 'booky@bookington.com',
-      website: 'http://booky-bookington.com'
-    })
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   await models.author.create({
+  //     name: 'Booky Bookington',
+  //     age: 41,
+  //     sex: 'M',
+  //     email: 'booky@bookington.com',
+  //     website: 'http://booky-bookington.com'
+  //   })
+  // } catch (error) {
+  //   console.log(error);
+  // }
   
   // #1
   try {
@@ -84,7 +84,7 @@ const validationExercise = async () => {
     }
   }
     
-  // #5
+//   // #5
   try {
     await models.author.create({
       name: 'Booky Bookington',
@@ -101,7 +101,7 @@ const validationExercise = async () => {
     }
   }
     
-  // #6
+//   // #6
   try {
     await models.author.create({
       name: 'Booky Bookington',
